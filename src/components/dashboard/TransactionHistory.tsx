@@ -8,6 +8,7 @@ import {
   Phone,
   ShieldEllipsis,
 } from "lucide-react";
+import Image from "next/image";
 
 interface Transaction {
   id: string;
@@ -75,7 +76,7 @@ export function TransactionHistory() {
       <div className="flex justify-between items-center">
         <h3 className="font-medium">Transaction History</h3>
         <button className="text-sm ">
-          <CircleEllipsis />
+         <Image src="/images/menudots.svg" alt="" width={24} height={24}/>
         </button>
       </div>
       <div className="space-y-2 ">

@@ -16,7 +16,6 @@ interface ServiceData {
   color: string;
 }
 
-// Update the SERVICES data to have different values that match the proportions in the image
 const SERVICES: ServiceData[] = [
   {
     name: "Airtime",
@@ -49,7 +48,12 @@ export function ServiceBreakdown() {
     <div className="bg-white p-4 md:p-6 md:border border-gray-1 rounded-lg">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <h3 className="font-medium">Service Breakdown</h3>
+          <div className="flex justify-between">
+            <h3 className="font-medium">Service Breakdown</h3>
+            <button className="text-sm ">
+              <Image src="/images/menudots.svg" alt="" width={24} height={24} />
+            </button>
+          </div>
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
