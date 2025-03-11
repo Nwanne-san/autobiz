@@ -46,7 +46,6 @@ export const Features = () => {
             }
           });
 
-          // Then show current panel
           gsap.to(rightPanelsRef.current[index], {
             opacity: 1,
             y: 0,
@@ -172,7 +171,9 @@ export const Features = () => {
             {FEATURES_DATA.map((feature, index) => (
               <div
                 key={feature.id}
-                ref={(el) => (featureSectionsRef.current[index] = el)}
+                ref={(el) => {
+                  featureSectionsRef.current[index] = el;
+                }}
                 className="h-screen flex items-center p-16"
               >
                 <div className="max-w-lg mx-auto">
@@ -194,7 +195,9 @@ export const Features = () => {
 
           <div className="bg-gray-100">
             <div
-              ref={(el) => (rightPanelsRef.current[0] = el)}
+              ref={(el) => {
+                rightPanelsRef.current[0] = el;
+              }}
               className="h-screen flex items-center justify-center p-16"
             >
               <div className="relative w-[400px] h-[400px]">
@@ -225,7 +228,9 @@ export const Features = () => {
             </div>
 
             <div
-              ref={(el) => (rightPanelsRef.current[1] = el)}
+              ref={(el) => {
+                rightPanelsRef.current[1] = el;
+              }}
               className="h-screen flex items-center justify-center p-16"
             >
               <div className="space-y-6 w-full max-w-md">
@@ -243,8 +248,11 @@ export const Features = () => {
               </div>
             </div>
 
+            {/* Pricing Plans Panel */}
             <div
-              ref={(el) => (rightPanelsRef.current[2] = el)}
+              ref={(el) => {
+                rightPanelsRef.current[2] = el;
+              }}
               className="h-screen flex items-center justify-center p-16"
             >
               <div className="space-y-6 w-full max-w-md">

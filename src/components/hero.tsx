@@ -15,23 +15,32 @@ export const Hero = () => {
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-    tl.fromTo(
-      textRef.current?.querySelectorAll("h1, h2, p, button, .feature-tag"),
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 0.1,
-        duration: 0.8,
+    if (textRef.current) {
+      const elements = textRef.current.querySelectorAll(
+        "h1, h2, p, button, .feature-tag"
+      );
+      if (elements.length > 0) {
+        tl.fromTo(
+          elements,
+          { y: 50, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            stagger: 0.1,
+            duration: 0.8,
+          }
+        );
       }
-    );
+    }
 
-    tl.fromTo(
-      imageRef.current,
-      { x: 50, opacity: 0 },
-      { x: 0, opacity: 1, duration: 1 },
-      "-=0.5"
-    );
+    if (imageRef.current) {
+      tl.fromTo(
+        imageRef.current,
+        { x: 50, opacity: 0 },
+        { x: 0, opacity: 1, duration: 1 },
+        "-=0.5"
+      );
+    }
 
     return () => {
       tl.kill();

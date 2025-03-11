@@ -177,7 +177,7 @@ export const FAQ = () => {
                   </button>
 
                   <div
-                    ref={(el) => (answerRefs.current[index] = el)}
+                    ref={(el) => {(answerRefs.current[index] = el)}}
                     className="overflow-hidden"
                     style={{
                       height: openIndex === index ? "auto" : 0,
